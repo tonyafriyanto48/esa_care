@@ -1,48 +1,34 @@
+import 'package:esa_care_fix/screen/register.dart';
+import 'package:esa_care_fix/screen/sign.dart';
 import 'package:flutter/material.dart';
-import 'package:esa_care/main.dart';
 
-class welcomepage extends StatefulWidget {
-  const welcomepage();
+class WelcomePage extends StatefulWidget {
+  const WelcomePage();
 
   @override
-  _welcomepage createState() => _welcomepage();
+  _WelcomePageState createState() => _WelcomePageState();
 }
 
-class _welcomepage extends State<welcomepage> {
-  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+class _WelcomePageState extends State<WelcomePage> {
+  int _selectedNavbar = 0;
 
-  @override
-  void initState() {
-    super.initState();
-    checkToken();
-  }
-
-  Future<void> checkToken() async {
-    final prefs = await SharedPreferences.getInstance();
-    final String? token = prefs.getString('token');
-    print("token $token");
-    if ((token ?? "") != "") {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => Homescreen(),
-        ),
-      );
-    }
+  void _changeSelectedNavBar(int index) {
+    setState(() {
+      _selectedNavbar = index;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
           Container(
             decoration: BoxDecoration(
-              color: new Color(0xFF789FF1),
+              color: Color.fromARGB(255, 255, 255, 255),
               gradient: LinearGradient(
-                colors: [new Color(0xFF5DC6F3), new Color(0xFF0A91E0)],
+                colors: [Color.fromARGB(255, 161, 216, 240), Color.fromARGB(255, 232, 232, 233)],
                 begin: Alignment.centerRight,
                 end: Alignment.centerLeft,
               ),
@@ -52,7 +38,7 @@ class _welcomepage extends State<welcomepage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Image(
-                image: AssetImage("assets/logo_EJ.png"),
+                image: AssetImage("assets/kecil esa care 1.png"),
                 width: 300,
               ),
               Padding(
@@ -74,7 +60,7 @@ class _welcomepage extends State<welcomepage> {
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
-                        return RegisterPage();
+                        return TampilanRegister();
                       }));
                     },
                     child: Text(
@@ -99,7 +85,7 @@ class _welcomepage extends State<welcomepage> {
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
-                        return LoginPage();
+                        return TampilanRegister();
                       }));
                     },
                     child: Text(
@@ -117,7 +103,7 @@ class _welcomepage extends State<welcomepage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Homescreen()));
+                              builder: (context) => TampilanLogin()));
                     },
                     child: Text(
                       'Lewati',

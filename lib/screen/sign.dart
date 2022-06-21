@@ -1,8 +1,8 @@
+import 'package:esa_care_fix/screen/register.dart';
 import 'package:flutter/material.dart';
 import 'package:esa_care_fix/constants.dart';
 
-class TampilanRegister extends StatelessWidget {
-  static const routeName = "/halamanRegister";
+class TampilanLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +42,7 @@ class TampilanRegister extends StatelessWidget {
           padding: EdgeInsets.only(top: 16.0),
         ),
         Text(
-          "Daftar",
+          "Login",
           style: TextStyle(
             color: Colors.blueAccent[400],
             fontSize: 25.0,
@@ -72,14 +72,14 @@ class TampilanRegister extends StatelessWidget {
             ),
             focusedBorder: UnderlineInputBorder(
               borderSide: BorderSide(
-                color: Colors.white70,
+                color: Colors.blueAccent,
                 width: 3.0,
               ),
             ),
-            hintText: "Username",
+            hintText: "Username or Email",
             hintStyle: TextStyle(color: ColorPalette.hintColor),
           ),
-          style: TextStyle(color: Colors.blueAccent[400]),
+          style: TextStyle(color: Colors.white70),
           autofocus: false,
         ),
         Padding(
@@ -96,39 +96,14 @@ class TampilanRegister extends StatelessWidget {
             ),
             focusedBorder: UnderlineInputBorder(
               borderSide: BorderSide(
-                color: Colors.blueAccent,
+                color: Colors.white70,
                 width: 3.0,
               ),
             ),
             hintText: "Password",
             hintStyle: TextStyle(color: ColorPalette.hintColor),
           ),
-          style: TextStyle(color: Colors.blueAccent[400]),
-          obscureText: true,
-          autofocus: false,
-        ),
-        Padding(
-          padding: EdgeInsets.only(top: 12.0),
-        ),
-        TextFormField(
-          decoration: const InputDecoration(
-            border: UnderlineInputBorder(),
-            enabledBorder: UnderlineInputBorder(
-              borderSide: BorderSide(
-                color: ColorPalette.underlineTextField,
-                width: 1.5,
-              ),
-            ),
-            focusedBorder: UnderlineInputBorder(
-              borderSide: BorderSide(
-                color: Colors.blueAccent,
-                width: 3.0,
-              ),
-            ),
-            hintText: "Confirm Password",
-            hintStyle: TextStyle(color: ColorPalette.hintColor),
-          ),
-          style: TextStyle(color: Colors.blueAccent[400]),
+          style: TextStyle(color: Colors.white12),
           obscureText: true,
           autofocus: false,
         ),
@@ -147,7 +122,7 @@ class TampilanRegister extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 8.0),
             width: double.infinity,
             child: Text(
-              'Daftar',
+              'Login',
               style: TextStyle(color: ColorPalette.primaryColor),
               textAlign: TextAlign.center,
             ),
@@ -161,7 +136,7 @@ class TampilanRegister extends StatelessWidget {
           padding: EdgeInsets.only(top: 16.0),
         ),
         Text(
-          'or',
+          'atau',
           style: TextStyle(
             color: Colors.blueAccent[400],
             fontSize: 12.0,
@@ -169,7 +144,7 @@ class TampilanRegister extends StatelessWidget {
         ),
         FlatButton(
           child: Text(
-            'Login',
+            'Register',
             style: TextStyle(color: Colors.blueAccent[400]),
           ),
           onPressed: () {

@@ -1,6 +1,6 @@
 {
-    "name": "esa_care",
-    "short_name": "esa_care",
+    "name": "esa_care_fix",
+    "short_name": "esa_care_fix",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

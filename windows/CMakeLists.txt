@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(esa_care LANGUAGES CXX)
+project(esa_care_fix LANGUAGES CXX)
 
-set(BINARY_NAME "esa_care")
+set(BINARY_NAME "esa_care_fix")
 
 cmake_policy(SET CMP0063 NEW)
 
